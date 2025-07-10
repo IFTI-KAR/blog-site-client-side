@@ -35,7 +35,7 @@ const WishlistPage = () => {
 
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:3000/wishlist/${user.email}`,{
+      const res = await fetch(`https://blog-server-two-omega.vercel.app/wishlist/${user.email}`,{
         credentials:'include'
       });
       const data = await res.json();
@@ -58,7 +58,7 @@ const WishlistPage = () => {
     if (!confirm.isConfirmed) return;
 
     try {
-      const res = await fetch(`http://localhost:3000/wishlist/${user.email}/${blogId}`, {
+      const res = await fetch(`https://blog-server-two-omega.vercel.app/wishlist/${user.email}/${blogId}`, {
         method: 'DELETE'
       });
       const result = await res.json();

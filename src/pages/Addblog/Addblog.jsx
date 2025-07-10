@@ -36,7 +36,7 @@ const AddBlog = () => {
     };
 
     try {
-      const res = await fetch('http://localhost:3000/blogs', {
+      const res = await fetch('https://blog-server-two-omega.vercel.app/blogs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(blogWithUser)

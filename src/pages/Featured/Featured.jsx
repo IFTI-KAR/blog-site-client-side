@@ -18,7 +18,7 @@ const Featured = () => {
   useEffect(() => {
     const fetchFeatured = async () => {
       try {
-        const res = await fetch('http://localhost:3000/blogs/featured');
+        const res = await fetch('https://blog-server-two-omega.vercel.app/blogs/featured');
         const data = await res.json();
         setBlogs(data);
       } catch (err) {

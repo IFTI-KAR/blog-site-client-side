@@ -34,7 +34,7 @@ const AllBlogs = () => {
   const fetchBlogs = async () => {
     setLoading(true);
     try {
-      let url = 'http://localhost:3000/blogs?';
+      let url = 'https://blog-server-two-omega.vercel.app/blogs?';
       if (searchTerm) url += `search=${encodeURIComponent(searchTerm)}&`;
       if (category && category !== 'All') url += `category=${encodeURIComponent(category)}&`;
 
@@ -58,7 +58,7 @@ const AllBlogs = () => {
       return;
     }
     try {
-      const res = await fetch('http://localhost:3000/wishlist', {
+      const res = await fetch('https://blog-server-two-omega.vercel.app/wishlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ userEmail: user.email, blogId })

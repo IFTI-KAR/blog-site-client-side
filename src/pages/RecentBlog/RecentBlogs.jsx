@@ -33,7 +33,7 @@ const RecentBlogs = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('http://localhost:3000/blogs/recent')
+        fetch('https://blog-server-two-omega.vercel.app/blogs/recent')
             .then(res => res.json())
             .then(data => setBlogs(data));
     }, []);
@@ -49,7 +49,7 @@ const RecentBlogs = () => {
             return;
         }
 
-        const res = await fetch('http://localhost:3000/wishlist', {
+        const res = await fetch('https://blog-server-two-omega.vercel.app/wishlist', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userEmail: user.email, blogId })

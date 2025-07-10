@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
       setloading(false);
       if (currentUser?.email){
         const userData={email:currentUser.email}
-        axios.post('http://localhost:3000/jwt',userData,{
+        axios.post('https://blog-server-two-omega.vercel.app/jwt',userData,{
             withCredentials:true
         })
         .then(res=>{
