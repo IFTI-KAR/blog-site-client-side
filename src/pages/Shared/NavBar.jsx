@@ -3,7 +3,7 @@ import { FiLogIn } from 'react-icons/fi';
 import { Link } from 'react-router';
 
 import logo from '../../assets/images/logo-white.png'
-import { AuthContext } from '../../context/AuthContext/AuthCotext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 import { use } from 'react';
 
 const Navbar = () => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router';
 import Swal from 'sweetalert2';
-import { AuthContext } from '../../context/AuthContext/AuthCotext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 const BlogDetails = () => {
   const { user } = useContext(AuthContext);
@@ -20,7 +20,7 @@ const BlogDetails = () => {
   const fetchBlog = async () => {
     setLoading(true);
     try {
-      const res = await fetch(`https://blog-server-two-omega.vercel.app/blogs/${id}`);
+      const res = await fetch(`https://blog-server-five-alpha.vercel.app/blogs/${id}`);
       if (!res.ok) throw new Error('Failed to fetch blog');
       const data = await res.json();
       setBlog(data);
@@ -33,7 +33,7 @@ const BlogDetails = () => {
   const fetchComments = async () => {
     setCommentsLoading(true);
     try {
-      const res = await fetch(`https://blog-server-two-omega.vercel.app/comments?blogId=${id}`);
+      const res = await fetch(`https://blog-server-five-alpha.vercel.app/comments?blogId=${id}`);
       if (!res.ok) throw new Error('Failed to fetch comments');
       const data = await res.json();
       setComments(data);
@@ -141,7 +141,7 @@ const BlogDetails = () => {
     };
 
     try {
-      const res = await fetch('https://blog-server-two-omega.vercel.app/comments', {
+      const res = await fetch('https://blog-server-five-alpha.vercel.app/comments', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(newComment)

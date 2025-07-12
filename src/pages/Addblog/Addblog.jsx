@@ -8,7 +8,7 @@ import {
   FaRegStickyNote,
   FaAlignLeft
 } from 'react-icons/fa';
-import { AuthContext } from '../../context/AuthContext/AuthCotext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 const AddBlog = () => {
   const { user } = useContext(AuthContext);
@@ -36,7 +36,7 @@ const AddBlog = () => {
     };
 
     try {
-      const res = await fetch('https://blog-server-two-omega.vercel.app/blogs', {
+      const res = await fetch('https://blog-server-five-alpha.vercel.app/blogs', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(blogWithUser)

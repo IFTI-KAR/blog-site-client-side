@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+  signInWithPopup,
+  GoogleAuthProvider
+} from 'firebase/auth';
 import { auth } from '../../firebase/firebase.init';
-import { AuthContext } from './AuthCotext';
+import { AuthContext } from './AuthContext'; // ✅ fixed typo here
 import axios from 'axios';
 
 const provider = new GoogleAuthProvider();
@@ -34,23 +41,24 @@ const AuthProvider = ({ children }) => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
       setuser(currentUser);
       setloading(false);
-      if (currentUser?.email){
-        const userData={email:currentUser.email}
-        axios.post('https://blog-server-two-omega.vercel.app/jwt',userData,{
-            withCredentials:true
-        })
-        .then(res=>{
-            console.log('token fter jwt',res.data)
-            
-        })
-        .catch(error=>console.log(error))
 
+      if (currentUser?.email) {
+        axios.post(
+          'https://blog-server-five-alpha.vercel.app/jwt',
+          { email: currentUser.email },
+          { withCredentials: true }
+        )
+        .then(res => {
+          console.log('Token set after JWT:', res.data);
+        })
+        .catch(error => console.log('JWT error:', error));
       }
+      
+
       console.log('Auth state changed: ', currentUser);
     });
-    return () => {
-      unSubscribe();
-    };
+
+    return () => unSubscribe();
   }, []);
 
   const authInfo = {
@@ -59,7 +67,7 @@ const AuthProvider = ({ children }) => {
     createUser,
     signInUser,
     signOutUser,
-    signInWithGoogle,
+    signInWithGoogle
   };
 
   return <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>;

@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
 import { motion } from 'framer-motion';
 import { FaHeart, FaEye } from 'react-icons/fa';
-import { AuthContext } from '../../context/AuthContext/AuthCotext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 import bg from '../../assets/images/bg.jpg'; // Make sure this path is correct
 import { useNavigate } from 'react-router'
 const containerVariants = {
@@ -33,7 +33,7 @@ const RecentBlogs = () => {
     const { user } = useContext(AuthContext);
 
     useEffect(() => {
-        fetch('https://blog-server-two-omega.vercel.app/blogs/recent')
+        fetch('https://blog-server-five-alpha.vercel.app/blogs/recent')
             .then(res => res.json())
             .then(data => setBlogs(data));
     }, []);
@@ -49,7 +49,7 @@ const RecentBlogs = () => {
             return;
         }
 
-        const res = await fetch('https://blog-server-two-omega.vercel.app/wishlist', {
+        const res = await fetch('https://blog-server-five-alpha.vercel.app/wishlist', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ userEmail: user.email, blogId })

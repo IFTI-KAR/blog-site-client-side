@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Lottie from 'lottie-react';
 import register_lottie from '../../assets/lotties/Register.json';
-import { AuthContext } from '../../context/AuthContext/AuthCotext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 import { updateProfile } from 'firebase/auth';
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router';

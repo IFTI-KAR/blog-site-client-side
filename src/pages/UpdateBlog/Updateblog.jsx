@@ -9,7 +9,7 @@ import {
   FaRegStickyNote,
   FaAlignLeft
 } from 'react-icons/fa';
-import { AuthContext } from '../../context/AuthContext/AuthCotext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 
 const UpdateBlog = () => {
   const { id } = useParams();
@@ -26,7 +26,7 @@ const UpdateBlog = () => {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await fetch(`https://blog-server-two-omega.vercel.app/blogs/${id}`);
+        const res = await fetch(`https://blog-server-five-alpha.vercel.app/blogs/${id}`);
         const data = await res.json();
         if (res.ok) {
           setFormData({
@@ -55,7 +55,7 @@ const UpdateBlog = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`https://blog-server-two-omega.vercel.app/blogs/${id}`, {
+      const res = await fetch(`https://blog-server-five-alpha.vercel.app/blogs/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData)

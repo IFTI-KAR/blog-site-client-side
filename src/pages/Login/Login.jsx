@@ -1,7 +1,7 @@
 import React, { use, useContext, useState } from 'react';
 import Lottie from 'lottie-react';
 import login_lottie from '../../assets/lotties/Login.json'; // Add a login animation
-import { AuthContext } from '../../context/AuthContext/AuthCotext';
+import { AuthContext } from '../../context/AuthContext/AuthContext';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../firebase/firebase.init';
 import { useNavigate } from 'react-router';
