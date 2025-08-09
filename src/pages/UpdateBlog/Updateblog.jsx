@@ -132,7 +132,7 @@ const UpdateBlog = () => {
               <option value="Lifestyle">Lifestyle</option>
               <option value="Education">Education</option>
               <option value="Travel">Travel</option>
-              <option value="Food">Food</option>
+              <option value="Food">Foods</option>
             </select>
           </div>
 

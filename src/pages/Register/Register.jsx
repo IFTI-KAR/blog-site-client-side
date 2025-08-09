@@ -12,6 +12,7 @@ const Register = () => {
   const navigate = useNavigate();
   const [error, setError] = useState('');
 
+  
   const validatePassword = (password) => {
     if (password.length < 6) {
       return 'Password must be at least 6 characters long.';
