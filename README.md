@@ -161,10 +161,6 @@ These are wrapped with `PrivateRoute` to ensure only authenticated users can acc
 
 ---
 
-## 🖌 UI Previews
-
-![Home Page Screenshot](https://i.imgur.com/placeholder.png)
-![Blog Details Screenshot](https://i.imgur.com/placeholder.png)
 
 ---
 
