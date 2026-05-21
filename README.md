@@ -5,7 +5,9 @@ A full-stack blogging platform where users can **browse blogs, read details, add
 Built with **React (Vite)**, **Firebase Authentication**, **Node.js + Express**, and **MongoDB**.
 
 🔗 **Live Demo:** [log-web-34782.web.app](https://log-web-34782.web.app/)
+
 💻 **Client Repo:** [blog-site-client-side](https://github.com/IFTI-KAR/blog-site-client-side)
+
 🗄 **Server Repo:** [blog-server-side](https://github.com/IFTI-KAR/blog-server-side)
 
 ---
